@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="icon" href="/images/oie_715212k650gyPO.gif" type="image/gif">
+		<!--link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css"-->
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<span class="image main" style="left:50%;"><img style="max-height: 240px; max-width:180px;transform: translate(-50%);" src="/images/oie_715212k650gyPO.gif" alt="" /></span>
+						<div class="content">
+							<div class="inner">
+								<h1>{{ title }}</h1>
+								<div>{{ desc }}</div>
+								<div>
+								<h2>List</h2>
+								
+									<!-- 使用 for 迴圈將列表印出 -->
+									{% for file in files %}
+										<p>
+										<a href="/download/{{ file }}" download>{{ file }}</a>
+										{% if file == latest %}
+											<span style="color: red; font-weight: bold;">(最新!)</span>
+										{% endif %}
+										</p>
+									{% else %}
+										<p>目前沒有任何檔案</p>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</header>
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+	</body>
+</html>
